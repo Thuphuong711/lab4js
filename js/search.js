@@ -30,6 +30,8 @@ function search(event){
                 let request_num = response.total_number_of_requests;
                 console.log("request_num: ", request_num);
                 word_not_found = response.message.replace("%", `'${term}'` );
+ 		document.getElementById("word").innerHTML = "";
+                document.getElementById("definition").innerHTML = "";
                 document.getElementById("requestNum").innerHTML = request_num + ". " + word_not_found;
                 document.getElementById("entriesNum").innerHTML = response.total_number_of_words;
             }
